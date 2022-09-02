@@ -1,6 +1,7 @@
 import Card from './Card'
 import data from './data'
-
+import Header from './Header'
+import './App.css'
 
 
 
@@ -8,14 +9,15 @@ export default function App() {
     const cards = data.map(item => {
         return (
             <Card 
-                    id={item.id}
-                    imageUrl={item.imageUrl}
+                    key={item.id}
+                    {...item}
             />
         )
     });
 
     return (
-        <div>
+        <div className="body">
+            <Header />
             {cards}
         </div>
     )
